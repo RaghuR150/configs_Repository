@@ -1,10 +1,8 @@
 spring:
   application:
     name: payment-service-micro
-server:
-  port: 8082
 
- datasource:
+  datasource:
     url: jdbc:mysql://localhost:3306/springbootdatabase
     username: root
     password: root1999
@@ -19,9 +17,13 @@ server:
   zipkin:
     base-url: http://localhost:9411
     enabled: true
+
   sleuth:
     sampler:
       probability: 1.0
+
+server:
+  port: 8082
 
 eureka:
   client:
@@ -38,8 +40,7 @@ management:
     web:
       exposure:
         include: "*"
-        
+
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %5p [${spring.application.name},%X{traceId},%X{spanId}] %logger{36} - %msg%n"
-
