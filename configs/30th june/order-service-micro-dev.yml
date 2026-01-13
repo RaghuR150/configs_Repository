@@ -2,6 +2,12 @@ spring:
   application:
     name: order-service-micro
 
+  cloud:
+    openfeign:
+      micrometer:
+        enabled: true
+
+
   datasource:
     url: jdbc:mysql://localhost:3306/springbootdatabase
     username: root
